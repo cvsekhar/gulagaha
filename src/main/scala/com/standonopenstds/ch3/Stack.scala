@@ -20,12 +20,10 @@ class Stack(val content: Int, next: ActorRef) extends Actor {
   import Stack._
   def receive = {
     
-    case PopOp(r) => sender ! OperationOk(r,content,next)
-                     println("killing .. " + self.path)
+    case PopOp(r) => sender ! OperationOk(r,content,next)                     
                      context.stop(self)
     
     case PushOp(r,v) => val a = context.actorOf(Props(new Stack(v, self)),""+v)
-                        println(a.path)
                         sender ! OperationOk(r,v,a)
  
   }
