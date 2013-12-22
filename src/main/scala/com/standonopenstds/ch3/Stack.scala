@@ -6,7 +6,7 @@ import akka.actor.Terminated
 object Stack {
   
   case class Push(content: Int)
-  case class Pop
+  object Pop
   case class PushOp(requester:ActorRef, content: Int)
   case class PopOp(requester: ActorRef)  
   case class OperationOk(requester:ActorRef,content: Int, next:ActorRef)  
