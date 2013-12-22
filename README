@@ -1,0 +1,7 @@
+Examples form Gul Agaha Actors book
+
+sbt eclipse and import the project to eclipse 
+
+or
+
+sbt test
